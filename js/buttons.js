@@ -18,7 +18,7 @@ buttonAdd.addEventListener(
 
 
 // Delete button <--- we have to wait for the button to be populated before we can add the listener
-let buttonDelete;
+let buttonRemove;
 export function makeRemoveClickable(){
     buttonRemove = document.querySelector("#buttonRemove");
     buttonRemove.addEventListener(
@@ -31,12 +31,13 @@ export function makeRemoveClickable(){
 
 
 // Edit button <---- we have to wait for the button to be populated again
-let editButton;
+let buttonEdit;
 export function makeEditClickable(){
     buttonEdit = document.querySelector('#buttonEdit');
     buttonEdit.addEventListener(
         "click",
         (e) => {
+            console.log('Trying to make this button editable')
             Cards.editThisCard(e)
         }
     )

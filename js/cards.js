@@ -8,6 +8,8 @@ export function createCard(){
     
     let photo = document.getElementById('destination_photo').value ? document.getElementById('destination_photo').value : defaultPhoto;
 
+    
+
     let description = document.getElementById('destination_description').value;
     let innerCard = 
         `<div class="card col-md-4">
@@ -43,10 +45,9 @@ export function createCard(){
     // We can now add a delete listener:
     makeRemoveClickable();
     makeEditClickable();
-    
-    
-
 }
+
+
 
 export function removeThisCard(e){
     
@@ -56,38 +57,49 @@ export function removeThisCard(e){
     });
 }
 
-export function editThisCard(){
-    console.log('editing')
-    $('div .card').click(function(e){
 
-        // Save all the original info
-        let thisCard = e.target.parentNode.childNodes;
-        let cardInformation = [];
-        cardInformation[0] = thisCard[1];
-        cardInformation[1] = thisCard[3];
-        cardInformation[2] = thisCard[5];
-        cardInformation[3] = e.target.parentNode.parentNode.childNodes[1];
-        console.log(cardInformation[0]['innerHTML'])
-        
+async function checkImage(url){
+    const res = await fetch(url);
+    const buff = await res.blob();
+    console.log(buff.type.startsWith('image/'));
+    return buff.type.startsWith('image/')
+}
+export function editThisCard(e){
+    console.log(e.target.parentNode)
+    
 
-        // Get new info from the user
-        let newCard = []
-        newCard[0] = window.prompt("What would you like to rename the destination?");
-        newCard[1] = window.prompt("Where would you like to change the location to?");
-        newCard[2] = window.prompt("What is the new description?");
-        newCard[3] = window.prompt("What is the new URL of a photo you would like to save?");
+    // Save all the original info
+    let thisCard = e.target.parentNode.childNodes;
+    let title = thisCard[1];
+    let location = thisCard[3];
+    let description = thisCard[5];
+    let photo = e.target.parentNode.parentNode.childNodes[1];
+    console.log(thisCard)
+    
 
-        // Save the information if necessary
-        for(var i = 0; i < cardInformation.length-1; i++){
-            if(newCard[i].length > 0){
-                cardInformation[i].innerText = newCard[i];
-            }
+    // Get new info from the user
+    let newTitle = window.prompt("What would you like to rename the destination?");
+    let newLocation = window.prompt("Where would you like to change the location to?");
+    let newDescription = window.prompt("What is the new description?");
+    let newPhoto = window.prompt("What is the new URL of a photo you would like to save?");
+
+    // Save the information if necessary
+    if(newTitle.length > 0){
+        title.innerText = newTitle
+    }
+    if(newLocation.length > 0){
+        location.innerText = newLocation
+    }
+    if(newDescription.length > 0){
+        description.innerText = newDescription
+    }
+    
+    if(newPhoto.length > 0){
+        if(checkImage(newPhoto)){
+            console.log('changing URL')
+            photo.setAttribute("src", newPhoto);
         }
-        if(newCard[3].length > 0){
-            cardInformation[i].setAttribute("src", newCard[3]);
-        }
-
-    });
+    }
 }
 
 export default { createCard, removeThisCard, editThisCard };
