@@ -1,0 +1,28 @@
+<!-- 
+    Begin the form section
+ -->
+ <div class="col-md-3">
+    <form id="destination_form">
+        <div class="form-group">
+            <label for="destination_name">Destination name</label>
+            <input id="destination_name" class="form-control" type="text"
+            placeholder="Enter the name of the destination" required>
+            <p id="destination_name_validation"></p>
+        </div>
+        <div class="form-group">
+            <label for="destination_location">Location</label>
+            <input id="destination_location" class="form-control" type="text"
+            placeholder="Where is it located?" required>
+            <p id="destination_location_validation"></p>
+        </div>
+        <div class="form-group">
+            <label for="destination_photo">Photo</label>
+            <input id="destination_photo" class="form-control" type="url" placeholder="Enter an image URL">
+        </div>
+        <div class="form-group">
+            <label for="destination_description">Description</label>
+            <textarea id="destination_description" class="form-control" type="text" placeholder="Where is it located?"></textarea>
+        </div>
+        <button class="btn btn-primary" id="buttonAddToList">Add to list</button>
+    </form>
+</div>

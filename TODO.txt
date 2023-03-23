@@ -1,0 +1,25 @@
+Form
+
+
+
+Left Side:
+(((bootstrap)))
+Dynamically make a new div on the right to create a new card 
+
+placeholder photo w/o something from the user
+Destination name and Location required.
+
+Need: Destination name
+Location
+photo
+Description 
+
+Note that it clears the form after entry.
+
+Remove 'removes' the card from the screen 
+Edit brings up a prompt to enter new need, location, photo, Description
+
+
+Current Goal:
+---- Switch from inline JS to hidden DONE AND CHUNKING DONE
+---- Make edit work
