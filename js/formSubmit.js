@@ -22,7 +22,6 @@ function handleFormSubmit(){
     } else {
     // Step 2:  Handle the data:
         createCard();
-    
     }
 }
 

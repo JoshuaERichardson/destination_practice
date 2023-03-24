@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Import head -->
+<head>
+    <script src="../js/htmlLoader.js"></script>
+</head>
+<body>
+    <!-- Import Banner -->
+    <div class="jumbotron jumbotron-fluid" id="main_banner"></div>
+
+
+
+    <div class="row" id="main_body">
+    <!-- Import Form -->
+        <div class="col-md-3" id="main_form_container"></div>
+
+
+
+    <!-- 
+        Begin the Card Layout section
+    --->
+        <div class="col-md-9">
+            <h4 class="d-flex justify-content-center" id="title">Enter destination details</h4>
+            <!-- Cards generated dynamically with jQuery and javascript-->
+            <div id="destination_card_container" class="col-md-12 d-flex flex-wrap flex-row"> 
+                <!-- Insert each card here -->
+            </div>
+        </div> 
+        <div id="loadBootstrap"></div>
+</div>
+</body>

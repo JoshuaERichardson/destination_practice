@@ -18,14 +18,22 @@
 
 #destination_form, .card {
     padding: 20px;
-    border-radius: 30px;
-    background: #cedff2;
-    box-shadow: inset 16px 16px 32px #afbece,
-            inset -16px -16px 32px #edffff;
+    border-radius: 50px;
+    background: #d1cccc;
+    box-shadow:  35px 35px 71px #b2adad,
+        -35px -35px 71px #f0ebeb;
+}
+
+.card {
+    margin: 15px;
+    border-radius: 40px;
+background: linear-gradient(45deg, #bcb8b8, #e0dada);
+box-shadow:  37px -37px 74px #bab6b6,
+             -37px 37px 74px #e8e2e2;
 }
 
 body{
-    background: #cedff2;
+    background: #d1cccc;
 }
 
 
@@ -44,23 +52,32 @@ body{
 #buttonAddToList:hover {
     box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
     color: black;
-  }
+}
 
 
 
-  .input {
-    border: none;
-    outline: none;
-    border-radius: 15px;
-    padding: 1em;
-    background-color: #ccc;
-    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
-    transition: 300ms ease-in-out;
-  }
+.input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
   
-  .input:focus {
-    background-color: white;
-    transform: scale(1.05);
-    box-shadow: 13px 13px 100px #969696,
-               -13px -13px 100px #ffffff;
-  }
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+              -13px -13px 100px #ffffff;
+}
+
+.scale-in-hor-center {
+  -webkit-animation: scale-in-hor-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: scale-in-hor-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.image {
+    border-radius: 30px;
+}
