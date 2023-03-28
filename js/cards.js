@@ -17,12 +17,14 @@ export async function createCard(){
             console.log("Error: " + Error)
         })
 
+    // Create the edit button, make it clickable
     let buttonEdit = document.createElement('button');
     buttonEdit.className = 'btn btn-warning';
     buttonEdit.id = 'buttonEdit';
     buttonEdit.innerHTML = "Edit";
     makeEditClickable(buttonEdit);
     
+    // Create the delete button, make it clickable
     let buttonRemove = document.createElement('button');
     buttonRemove.className = 'btn btn-danger';
     buttonRemove.id = 'buttonRemove';
@@ -40,10 +42,8 @@ export async function createCard(){
         ;
     let cardContainer = document.createElement('div');
     cardContainer.classList.add('card', 'col-md-3');
-    
-    
-    
     cardContainer.innerHTML = innerCard;
+    
     let buttonDiv = document.createElement('div');
     buttonDiv.classList.add('d-flex', 'justify-content-around');
     buttonDiv.appendChild(buttonEdit);
@@ -56,12 +56,13 @@ export async function createCard(){
 
 
 export function removeThisCard(e){
-        $(e.target.parentNode).remove();
+        $(e.target.parentNode.parentNode).remove();
 }
 
 export function editThisCard(e){
     // Save all the original info
-    let thisCard = e.target.parentNode.childNodes[2].childNodes;
+    let thisCard = e.target.parentNode.parentNode.childNodes[2].childNodes;
+    console.log(thisCard)
     let title = thisCard[1];
     let location = thisCard[3];
     let description = thisCard[5];
