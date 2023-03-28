@@ -23,12 +23,17 @@
     <!--     
     Fluid Jumbotron to occupy the entire horizontal space of the page.
     -->
-<div class="jumbotron jumbotron-fluid" id="main_banner">
-    <div class="container text-center">
-        <h1 class="display-4">Vacation Destinations Wishlist</h1>
-        <p class="lead">Found exciting places to visition on your next vacation? Use the form below to add them to your wishlist</p>
-    </div>
+<div class="jumbotron jumbotron-fluid header-banner" id="main-banner">
+    <!-- <a href="#nav-bar" id="nav-bar-scroller">Leave your stress behind. Let's travel.</a> -->
+    <a href="#nav-bar" class="card" id="nav-bar-scroller">Leave your stress behind.</a>
 </div>
+
+<nav id="nav-bar">
+    <div class="site-title">Vacations. You need more vacations.</div>
+    <div class="container text-center">
+        <p class="lead"></p>
+    </div>
+</nav>
 
 
 <!-- 
@@ -39,7 +44,7 @@
 <!-- 
     Begin the form section
  -->
-    <div class="col-md-3" id="main_form_holder">
+    <div class="col-md-3 justify-content-center" id="main_form_holder">
         <form id="destination_form">
             <div class="form-group">
                 <label for="destination_name">Destination name</label>
@@ -66,8 +71,8 @@
 <!-- 
     Begin the Card Layout section
 --->
-    <div class="col-md-9">
-        <h4 class="d-flex justify-content-center" id="title">Enter destination details</h4>
+    <div class="col-md-9 justify-content-center" id="title">
+        <h4 class="d-flex">Enter destination details</h4>
 
         <!-- Cards generated dynamically with jQuery and javascript-->
         <div id="destination_card_container" class="col-md-12 d-flex flex-wrap flex-row "> 

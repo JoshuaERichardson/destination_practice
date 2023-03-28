@@ -2,7 +2,16 @@ import * as FormSubmit from './formSubmit.js';
 import * as Cards from './cards.js';
 
 
+/**
+ * button.js handles all buttons throughout page to include adding event listeners and routing to proper function
+ */
 
+
+
+
+/**
+ * buttonAdd captures form data and sends to handleFormSubmit() in separate JS
+ */
 let buttonAdd = document.querySelector('#buttonAddToList');
 buttonAdd.addEventListener(
     "click", 
@@ -16,28 +25,31 @@ buttonAdd.addEventListener(
 
 
 
-
-// Delete button <--- we have to wait for the button to be populated before we can add the listener
-let buttonRemove;
-export function makeRemoveClickable(){
-    buttonRemove = document.querySelector("#buttonRemove");
+/**
+ * buttonRemove is the delete button.
+ * Initialized to null as the button is not on the screen at time of page load
+ * makeRemoveClickable adds the listener at time of each card creation
+ */
+export function makeRemoveClickable(buttonRemove){
+    console.log("buttonRemove:",buttonRemove)
     buttonRemove.addEventListener(
-    "click",
-    (e) => {
-        Cards.removeThisCard(e)
-    }
+        "click",
+        (e) => {
+            Cards.removeThisCard(e)
+        }
     )
 }
 
 
-// Edit button <---- we have to wait for the button to be populated again
-let buttonEdit;
-export function makeEditClickable(){
-    buttonEdit = document.querySelector('#buttonEdit');
+/**
+ * buttonEdit is the edit button.
+ * Initialized to null as the button is not on the screen at time of page load
+ * makeEditClickable() adds the listener at time of each card creation
+ */
+export function makeEditClickable(buttonEdit){
     buttonEdit.addEventListener(
         "click",
         (e) => {
-            console.log('Trying to make this button editable')
             Cards.editThisCard(e)
         }
     )

@@ -1,6 +1,16 @@
+/**
+ * Asynchronous function API call to unsplash.
+ * API documentation at https://unsplash.com/documentation
+ * 
+ * @param {*} queryName is the subject matter of desired returned photo
+ * @param {*} queryLocation is the approximate location of the desired returned photo such as city or country
+ * @returns a Promise.  Resolve returns JSON with image information.  Reject returns an error message.
+ */
 async function unsplashAPIGET(queryName, queryLocation){
+
     /*
-     * Clean the data up
+     * Series of steps:
+     * Munge the received parameters and concatenate into a valid unsplash endpoint
      */
     // Step 1: Trim the outsides
     queryName = queryName.trim();
@@ -16,7 +26,7 @@ async function unsplashAPIGET(queryName, queryLocation){
 
     return new Promise(function(resolve, reject) {
         var request = new XMLHttpRequest();
-        request.open('GET', url)
+        request.open('GET', url);
         request.responseType = 'text';
         // Check to see if the request was successful
         request.onload = function() {
@@ -30,7 +40,6 @@ async function unsplashAPIGET(queryName, queryLocation){
             }
         }
         // Send the request
-        console.log("Trying to send the request")
         request.send();
     });
 }
