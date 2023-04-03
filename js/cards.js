@@ -10,12 +10,8 @@ export async function createCard(){
     let description = document.getElementById('destination_description').value;
     
     // unsplashAPIGET is an async function.  Await the answer for the API call before allowing to fill the photo information
-    let photo = await unsplashAPIGET(thisName, thisLocation)
-        .then(function(response) {
-            return response.urls.small;
-        }, function(Error) {
-            console.log("Error: " + Error)
-        })
+    let photo = await unsplashAPIGET(thisName, thisLocation);
+        
 
     // Create the edit button, make it clickable
     let buttonEdit = document.createElement('button');
@@ -33,13 +29,13 @@ export async function createCard(){
 
     // f string to create the HTML of each card
     let innerCard = 
-        `<img src="${photo}" class="card-img-top image" alt="Photo of Travel" />    
+        `<img src="${photo.urls.small}" class="card-img-top image" alt="Photo of Travel" />    
         <div class="card-body">      
             <h5 class="card-title" id="card-title">${thisName}</h5>      
             <p class="card-text" id="card-location">${thisLocation}</p>      
             <p class="card-text" id="card-description">${description}</p>
         </div>`
-        ;
+    ;
     let cardContainer = document.createElement('div');
     cardContainer.classList.add('card', 'col-md-3');
     cardContainer.innerHTML = innerCard;
